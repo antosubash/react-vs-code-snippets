@@ -1,0 +1,28 @@
+{
+  "name": "react-nextjs-snippets",
+  "displayName": "React, NextJs Snippets",
+  "description": "Snippets for the react and nextjs development.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      },
+       {
+        "language": "react",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
