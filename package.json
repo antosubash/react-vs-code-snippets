@@ -26,6 +26,10 @@
       {
         "language": "javascript",
         "path": "./snippets/console.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/console.code-snippets"
       }
     ]
   }
