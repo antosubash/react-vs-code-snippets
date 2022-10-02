@@ -11,20 +11,8 @@
     "description": "Typescript: Next.js get server side props",
     "scope": "typescript"
   },
-  "gsspj": {
-    "prefix": "gsspj",
-    "body": [
-      "export const getServerSideProps = async context => {",
-      "  return {",
-      "    props: {},",
-      "  };",
-      "};"
-    ],
-    "description": "Javascript: Next.js get server side props",
-    "scope": "javascript"
-  },
-  "gsp": {
-    "prefix": "gsp",
+  "gsprop": {
+    "prefix": "gsprop",
     "body": [
       "export const getStaticProps: GetStaticProps = async context => {",
       "  return {",
@@ -35,80 +23,18 @@
     "description": "Typescript: Next.js get static props",
     "scope": "typescript"
   },
-  "gspj": {
-    "prefix": "gspj",
+  "gspath" :{
+    "prefix": "gspath",
     "body": [
-      "export const getStaticProps = async context => {",
+      "export const getStaticPaths: GetStaticPaths = async () => {",
       "  return {",
-      "    props: {},",
+      "    paths: [],",
+      "    fallback: false,",
       "  };",
       "};"
     ],
-    "description": "Javascript: Next.js get static props",
-    "scope": "javascript"
-  },
-  "cc" : {
-    "prefix": "cc",
-    "body": [
-      "import { createContext, useContext } from 'react';",
-      "",
-      "const ${1:Context} = createContext(${2:defaultValue});",
-      "",
-      "export const use${1:Context} = () => useContext(${1:Context});",
-      "",
-      "export default ${1:Context};"
-    ],
-    "description": "Create Context"
-  },
-  "ccp" : {
-    "prefix": "ccp",
-    "body": [
-      "import { createContext, useContext } from 'react';",
-      "",
-      "const ${1:Context} = createContext(${2:defaultValue});",
-      "",
-      "export const use${1:Context} = () => useContext(${1:Context});",
-      "",
-      "export const ${1:Context}Provider = ${1:Context}.Provider;",
-      "",
-      "export default ${1:Context};"
-    ],
-    "description": "Create Context Provider"
-  },
-  "ccr" : {
-    "prefix": "ccr",
-    "body": [
-      "import { createContext, useContext } from 'react';",
-      "",
-      "const ${1:Context} = createContext(${2:defaultValue});",
-      "",
-      "export const use${1:Context} = () => useContext(${1:Context});",
-      "",
-      "export const ${1:Context}Provider = ${1:Context}.Provider;",
-      "",
-      "export const ${1:Context}Consumer = ${1:Context}.Consumer;",
-      "",
-      "export default ${1:Context};"
-    ],
-    "description": "Create Context Provider and Consumer"
-  },
-  "ccpwr" : {
-    "prefix": "ccpwr",
-    "body": [
-      "import { createContext, useContext } from 'react';",
-      "",
-      "const ${1:Context} = createContext(${2:defaultValue});",
-      "",
-      "export const use${1:Context} = () => useContext(${1:Context});",
-      "",
-      "export const ${1:Context}Provider = ({ children }) => {",
-      "  const value = ${3:useValue()};",
-      "  return <${1:Context}.Provider value={value}>{children}</${1:Context}.Provider>;",
-      "};",
-      "",
-      "export default ${1:Context};"
-    ],
-    "description": "Create Context Provider with Render Props"
+    "description": "Typescript: Next.js get static paths",
+    "scope": "typescript"
   },
   "com" : {
     "prefix": "com",
@@ -140,50 +66,64 @@
     "description": "Create Functional Component with Props"
   },
   "np" :{
-    "prefix": "cn",
+    "prefix": "np",
     "body": [
       "import React from 'react';",
-      "",
-      "interface ${1:Component}Props {",
-      "",
-      "}",
-      "const ${1:Component} = ({ } : ${1:Component}Props ) => {",
-      "  return <div>${2:Component}</div>;",
-      "};",
-    ],
-    "description": "Create Next Page"
-  },
-  "npwp" :{
-    "prefix": "cnpwp",
-    "body": [
-      "import React from 'react';",
-      "import { GetServerSideProps } from 'next';",
+      "import { NextPage } from 'next';",
       "",
       "interface ${1:Page}Props {",
       "",
       "}",
-      "const ${1:Page} = ({ } : ${1:Page}Props) => {",
+      "const ${1:Page} : NextPage<${1:Page}Props> = ({ } : ${1:Page}Props ) => {",
       "  return <div>${2:Page}</div>;",
       "};",
       "",
-      "export const getServerSideProps: GetServerSideProps = async context => {",
+      "export default ${1:Page};"
+    ],
+    "description": "Create Next Page"
+  },
+  "nsp" : {
+    "prefix": "nsp",
+    "body": [
+     "import React from 'react';",
+     "import { GetStaticPaths, GetServerSideProps, NextPage } from 'next';",
+      "",
+      "interface ${1:Page}Props {",
+      "",
+      "}",
+      "const ${1:Page} : NextPage<${1:Page}Props> = ({ } : ${1:Page}Props ) => {",
+      "  return <div>${2:Page}</div>;",
+      "};",
+      "",
+      "export const getStaticProps: GetServerSideProps = async ({ params }) => {",
+      "  if (!params) throw new Error('No path parameters found');",
       "  return {",
       "    props: {},",
+      "    revalidate: 5,", // revalidate every 5 seconds
+      "  };",
+      "};",
+      "",
+      "export const getStaticPaths: GetStaticPaths<${1:Page}Props> = async () => {",
+      "  return {",
+      "    paths: [],",
+      "    fallback: true,",
       "  };",
       "};",
       "",
       "export default ${1:Page};"
     ],
-    "description": "Create Next Page with Props"
+    "description": "Create Static Next Page"
   },
-  "nsp":{
-    "prefix": "nsp",
-    "description": "Next.js Static Page",
+  "nssp" : {
+    "prefix": "nssp",
     "body": [
       "import React from 'react';",
-      "import { GetStaticProps } from 'next';",
+      "import { GetServerSideProps, NextPage } from 'next';",
       "",
-      "const ${1:Page} = () => {",
+      "interface ${1:Page}Props {",
+      "",
+      "}",
+      "const ${1:Page} : NextPage<${1:Page}Props> = ({ } : ${1:Page}Props ) => {",
       "  return <div>${2:Page}</div>;",
       "};",
       "",
@@ -195,5 +135,6 @@
       "",
       "export default ${1:Page};"
     ],
+    "description": "Create Next Page with getStaticProps"
   },
 }
