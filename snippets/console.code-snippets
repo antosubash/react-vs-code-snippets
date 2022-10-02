@@ -1,0 +1,9 @@
+{
+  "clg" : {
+    "prefix": "clg",
+    "description": "Create console.log",
+    "body": [
+      "console.log(${1:}, ${1:});"
+    ]
+  },
+}
