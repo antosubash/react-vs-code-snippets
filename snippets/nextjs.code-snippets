@@ -1,0 +1,199 @@
+{
+  "gssp": {
+    "prefix": "gssp",
+    "body": [
+      "export const getServerSideProps: GetServerSideProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};"
+    ],
+    "description": "Typescript: Next.js get server side props",
+    "scope": "typescript"
+  },
+  "gsspj": {
+    "prefix": "gsspj",
+    "body": [
+      "export const getServerSideProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};"
+    ],
+    "description": "Javascript: Next.js get server side props",
+    "scope": "javascript"
+  },
+  "gsp": {
+    "prefix": "gsp",
+    "body": [
+      "export const getStaticProps: GetStaticProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};"
+    ],
+    "description": "Typescript: Next.js get static props",
+    "scope": "typescript"
+  },
+  "gspj": {
+    "prefix": "gspj",
+    "body": [
+      "export const getStaticProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};"
+    ],
+    "description": "Javascript: Next.js get static props",
+    "scope": "javascript"
+  },
+  "cc" : {
+    "prefix": "cc",
+    "body": [
+      "import { createContext, useContext } from 'react';",
+      "",
+      "const ${1:Context} = createContext(${2:defaultValue});",
+      "",
+      "export const use${1:Context} = () => useContext(${1:Context});",
+      "",
+      "export default ${1:Context};"
+    ],
+    "description": "Create Context"
+  },
+  "ccp" : {
+    "prefix": "ccp",
+    "body": [
+      "import { createContext, useContext } from 'react';",
+      "",
+      "const ${1:Context} = createContext(${2:defaultValue});",
+      "",
+      "export const use${1:Context} = () => useContext(${1:Context});",
+      "",
+      "export const ${1:Context}Provider = ${1:Context}.Provider;",
+      "",
+      "export default ${1:Context};"
+    ],
+    "description": "Create Context Provider"
+  },
+  "ccr" : {
+    "prefix": "ccr",
+    "body": [
+      "import { createContext, useContext } from 'react';",
+      "",
+      "const ${1:Context} = createContext(${2:defaultValue});",
+      "",
+      "export const use${1:Context} = () => useContext(${1:Context});",
+      "",
+      "export const ${1:Context}Provider = ${1:Context}.Provider;",
+      "",
+      "export const ${1:Context}Consumer = ${1:Context}.Consumer;",
+      "",
+      "export default ${1:Context};"
+    ],
+    "description": "Create Context Provider and Consumer"
+  },
+  "ccpwr" : {
+    "prefix": "ccpwr",
+    "body": [
+      "import { createContext, useContext } from 'react';",
+      "",
+      "const ${1:Context} = createContext(${2:defaultValue});",
+      "",
+      "export const use${1:Context} = () => useContext(${1:Context});",
+      "",
+      "export const ${1:Context}Provider = ({ children }) => {",
+      "  const value = ${3:useValue()};",
+      "  return <${1:Context}.Provider value={value}>{children}</${1:Context}.Provider>;",
+      "};",
+      "",
+      "export default ${1:Context};"
+    ],
+    "description": "Create Context Provider with Render Props"
+  },
+  "com" : {
+    "prefix": "com",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:Component} = () => {",
+      "  return <div>${2:Component}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Create Functional Component"
+  },
+  "comwp" : {
+    "prefix": "comwp",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Component}Props {",
+      "",
+      "}",
+      "const ${1:Component} = ({ } : ${1:Component}Props ) => {",
+      "  return <div>${2:Component}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Create Functional Component with Props"
+  },
+  "np" :{
+    "prefix": "cn",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Component}Props {",
+      "",
+      "}",
+      "const ${1:Component} = ({ } : ${1:Component}Props ) => {",
+      "  return <div>${2:Component}</div>;",
+      "};",
+    ],
+    "description": "Create Next Page"
+  },
+  "npwp" :{
+    "prefix": "cnpwp",
+    "body": [
+      "import React from 'react';",
+      "import { GetServerSideProps } from 'next';",
+      "",
+      "interface ${1:Page}Props {",
+      "",
+      "}",
+      "const ${1:Page} = ({ } : ${1:Page}Props) => {",
+      "  return <div>${2:Page}</div>;",
+      "};",
+      "",
+      "export const getServerSideProps: GetServerSideProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};",
+      "",
+      "export default ${1:Page};"
+    ],
+    "description": "Create Next Page with Props"
+  },
+  "nsp":{
+    "prefix": "nsp",
+    "description": "Next.js Static Page",
+    "body": [
+      "import React from 'react';",
+      "import { GetStaticProps } from 'next';",
+      "",
+      "const ${1:Page} = () => {",
+      "  return <div>${2:Page}</div>;",
+      "};",
+      "",
+      "export const getStaticProps: GetStaticProps = async context => {",
+      "  return {",
+      "    props: {},",
+      "  };",
+      "};",
+      "",
+      "export default ${1:Page};"
+    ],
+  },
+}
