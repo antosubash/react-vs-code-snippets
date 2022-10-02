@@ -30,6 +30,14 @@
       {
         "language": "typescript",
         "path": "./snippets/console.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/console.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/console.code-snippets"
       }
     ]
   }
