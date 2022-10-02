@@ -3,7 +3,7 @@
     "prefix": "clg",
     "description": "Create console.log",
     "body": [
-      "console.log(${1:}, ${1:});"
+      "console.log('${1:}', ${1:});"
     ]
   },
 }
