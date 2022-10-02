@@ -1,13 +1,28 @@
 {
-  "name": "react-snippets",
+  "name": "react-vs-code-snippets",
   "displayName": "React, NextJs, React Query Snippets",
   "description": "Snippets for the react and nextjs development.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.71.0"
   },
+  "publisher": "antosubash",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antosubash/react-vs-code-snippets"
+  },
   "categories": [
     "Snippets"
+  ],
+  "icon": "logo.png",
+  "keywords": [
+    "react",
+    "nextjs",
+    "react-query",
+    "react-query-snippets",
+    "react-snippets",
+    "nextjs-snippets",
+    "react-query-snippets"
   ],
   "contributes": {
     "snippets": [
