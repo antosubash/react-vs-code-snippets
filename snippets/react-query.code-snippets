@@ -1,0 +1,35 @@
+{
+  "rqc": {
+    "prefix": "rqc",
+    "body": [
+      "import { useQuery } from 'react-query';",
+      "",
+      "const ${1:Component} = () => {",
+      "  const { data, isLoading, isError } = useQuery('${2:query}', () => ${3:fetcher});",
+      "  if (isLoading) return <div>Loading...</div>;",
+      "  if (isError) return <div>Error</div>;",
+      "  return <div>{data}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Create React Query Component"
+  },
+  "rqh": {
+    "prefix": "rqh",
+    "description": "Create React Query Hook",
+    "body": [
+      "import { useQuery } from 'react-query';",
+      "",
+      "const use${1:Hook} = () => {",
+      "  const { data, isLoading, isError } = useQuery('${2:query}', () => {",
+      "     console.log('fetching');",
+      "     return {}",
+      "  });",
+      "  return { data, isLoading, isError };",
+      "};",
+      "",
+      "export default use${1:Hook};"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "com" : {
+    "prefix": "com",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:Component} = () => {",
+      "  return <div>${2:Component}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Create Functional Component"
+  },
+  "comwp" : {
+    "prefix": "comwp",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:Component}Props {",
+      "",
+      "}",
+      "const ${1:Component} = ({ } : ${1:Component}Props ) => {",
+      "  return <div>${2:Component}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Create Functional Component with Props"
+  },
+}

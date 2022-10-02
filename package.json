@@ -1,5 +1,5 @@
 {
-  "name": "react-nextjs-react-query-snippets",
+  "name": "react-snippets",
   "displayName": "React, NextJs, React Query Snippets",
   "description": "Snippets for the react and nextjs development.",
   "version": "0.0.1",
@@ -14,6 +14,14 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/nextjs.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/react.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/react-query.code-snippets"
       }
     ]
   }

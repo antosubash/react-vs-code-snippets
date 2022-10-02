@@ -36,35 +36,6 @@
     "description": "Typescript: Next.js get static paths",
     "scope": "typescript"
   },
-  "com" : {
-    "prefix": "com",
-    "body": [
-      "import React from 'react';",
-      "",
-      "const ${1:Component} = () => {",
-      "  return <div>${2:Component}</div>;",
-      "};",
-      "",
-      "export default ${1:Component};"
-    ],
-    "description": "Create Functional Component"
-  },
-  "comwp" : {
-    "prefix": "comwp",
-    "body": [
-      "import React from 'react';",
-      "",
-      "interface ${1:Component}Props {",
-      "",
-      "}",
-      "const ${1:Component} = ({ } : ${1:Component}Props ) => {",
-      "  return <div>${2:Component}</div>;",
-      "};",
-      "",
-      "export default ${1:Component};"
-    ],
-    "description": "Create Functional Component with Props"
-  },
   "np" :{
     "prefix": "np",
     "body": [
@@ -85,8 +56,9 @@
   "nsp" : {
     "prefix": "nsp",
     "body": [
-     "import React from 'react';",
-     "import { GetStaticPaths, GetServerSideProps, NextPage } from 'next';",
+      "import React from 'react';",
+      "import { GetStaticPaths, GetServerSideProps, NextPage } from 'next';",
+      "import { ParsedUrlQuery } from 'querystring';",
       "",
       "interface ${1:Page}Props {",
       "",
@@ -120,14 +92,14 @@
       "import React from 'react';",
       "import { GetServerSideProps, NextPage } from 'next';",
       "",
-      "interface ${1:Page}Props {",
+      "interface ${1:Page}Props extends ParsedUrlQuery {",
       "",
       "}",
       "const ${1:Page} : NextPage<${1:Page}Props> = ({ } : ${1:Page}Props ) => {",
       "  return <div>${2:Page}</div>;",
       "};",
       "",
-      "export const getStaticProps: GetStaticProps = async context => {",
+      "export const getServerSideProps: GetServerSideProps = async context => {",
       "  return {",
       "    props: {},",
       "  };",
